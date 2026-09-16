@@ -1,0 +1,36 @@
+{
+  "name": "ghostwriter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "next": "16.1.0",
+    "openai": "6.16.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "zod": "4.2.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3.3.3",
+    "@playwright/test": "1.57.0",
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "@typescript-eslint/eslint-plugin": "^8.69.0",
+    "@typescript-eslint/parser": "^8.69.0",
+    "@typescript-eslint/scope-manager": "^8.69.0",
+    "eslint": "9.39.1",
+    "eslint-config-next": "16.1.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "^8.69.0",
+    "vitest": "4.0.15"
+  }
+}
