@@ -10,7 +10,8 @@ const processingLines = ["Untangling your thoughts…", "Finding the interesting
 export default function Home() {
   const [phase, setPhase] = useState<Phase>("landing"); const [platform, setPlatform] = useState<Platform>("X"); const [transcript, setTranscript] = useState(""); const [seconds, setSeconds] = useState(0); const [result, setResult] = useState<Generation | null>(null); const [mode, setMode] = useState<"demo" | "live" | null>(null); const [error, setError] = useState<string | null>(null); const [loadingStyle, setLoadingStyle] = useState<StyleName | null>(null); const [copied, setCopied] = useState<StyleName | null>(null);
   const appendTranscript = useCallback((value: string) => setTranscript((current) => `${current}${current && !current.endsWith(" ") ? " " : ""}${value}`), []);
-  const speech = useSpeechRecognition(appendTranscript);
+  const recordingEnded = useCallback(() => setPhase((current) => current === "recording" ? "ready" : current), []);
+  const speech = useSpeechRecognition(appendTranscript, recordingEnded);
   const stopSpeech = speech.stop;
   useEffect(() => {
     if (phase !== "recording") return;
