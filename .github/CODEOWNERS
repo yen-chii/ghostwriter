@@ -1,0 +1,8 @@
+# Default owners for anything in the repository
+* @yen-chii
+
+# Sensitive automation config
+/.github/ @yen-chii
+
+# Application code
+/src/ @yen-chii
